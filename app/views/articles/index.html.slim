@@ -21,3 +21,5 @@
           td ng-bind="article.title"
           td ng-bind="article.created_at | date : format : timezone"
 
+    pre ng-bind="articles | filter:query | orderBy:orderProp | json"
+

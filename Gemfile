@@ -27,6 +27,7 @@ gem 'slim'
 gem 'rails_admin'
 gem 'bootstrap-sass'
 gem 'angularjs-rails'
+gem "paperclip", "~> 4.3"
 
 group :development do
   gem 'html2slim'
