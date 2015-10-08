@@ -1,4 +1,4 @@
-articleApp = angular.module('articleApp', ['ngRoute','templates','articleServices'])
+articleApp = angular.module('articleApp', ['ngRoute','templates','articleServices','ngAnimate'])
 
 articleApp.config(function ($routeProvider) {
   $routeProvider.

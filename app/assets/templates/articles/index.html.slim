@@ -19,7 +19,7 @@
           th Title
           th Created at
       tbody
-        tr ng-repeat="article in articles | filter:query | orderBy:orderProp"
+        tr.articles ng-repeat="article in articles | filter:query | orderBy:orderProp"
           td ng-bind="article.id"
           td.picture 
             a ng-href="#/articles/{{article.id}}"
