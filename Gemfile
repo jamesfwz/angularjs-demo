@@ -30,6 +30,7 @@ gem 'angularjs-rails'
 gem 'angular-rails-templates'
 gem "paperclip", "~> 4.3"
 gem 'underscore-rails'
+gem 'angular_rails_csrf'
 
 group :development do
   gem 'html2slim'

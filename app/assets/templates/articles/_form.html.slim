@@ -1,0 +1,23 @@
+.articles-form-container
+  .form-group ng-class="{'has-error' : submitted && articleForm.title.$invalid}"
+    .col-md-3
+      label.control-label
+        | Title
+        span.required *
+    .col-md-4
+      input.form-control type="text" name="title" ng-model="article.title" required="" placeholder="Title"
+    p ng-show=" submitted && articleForm.title.$invalid" class="help-block"
+      | Title is required.
+  .form-group ng-class="{'has-error' : submitted && articleForm.content.$invalid}"
+    .col-md-3
+      label.control-label
+        | Content
+        span.required *
+    .col-md-4
+      textarea.form-control name="content" ng-model="article.content" required="" placeholder="Type something here"
+    p ng-show=" submitted && articleForm.content.$invalid" class="help-block"
+      | Content is required.
+
+  .btn-group
+    a.btn.btn-default href="#/" Back
+    button.btn.btn-primary type="submit" ng-click="submitted=true" Submit
