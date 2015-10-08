@@ -9,17 +9,15 @@
       | Sort by:
       select ng-model="orderProp"
         option value="title" Alphabetical
-        option value="created_at" Newest
-        option value="-created_at" Oldest
+        option value="-created_at" Newest
+        option value="created_at" Oldest
     table.table.table-striped
       thead
         tr
           th Title
-          th Content
           th Created at
       tbody
         tr ng-repeat="article in articles | filter:query | orderBy:orderProp"
           td ng-bind="article.title"
-          td ng-bind="article.content"
-          td ng-bind="article.created_at"
+          td ng-bind="article.created_at | date : format : timezone"
 
