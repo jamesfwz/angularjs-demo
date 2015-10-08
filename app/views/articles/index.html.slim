@@ -1,18 +1,24 @@
-#articles-index-container
+#articles-index-container ng-controller="ArticlesIndexCtrl"
   h1.text-center List of Articles 
 
   .container-fluid
     .search
       | Search: 
       input ng-model="query"
-      
+    .sort-by
+      | Sort by:
+      select ng-model="orderProp"
+        option value="title" Alphabetical
+        option value="created_at" Newest
     table.table.table-striped
       thead
         tr
           th Title
+          th Content
           th Created at
       tbody
-        tr ng-repeat="article in articles | filter:query"
+        tr ng-repeat="article in articles | filter:query | orderBy:orderProp"
           td ng-bind="article.title"
           td ng-bind="article.content"
+          td ng-bind="article.created_at"
 
