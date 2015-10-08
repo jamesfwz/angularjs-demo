@@ -1,8 +1,12 @@
 #articles-show-container 
-  h1 ng-bind="article.title"
-  
-  h4 Content
-  p ng-bind="article.content"
+  .row
+    .col-md-3
+      .picture
+        img ng-src="{{article.picture_url}}"
+    .col-md-9
+      h1 ng-bind="article.title"
+      h4 Content
+      p ng-bind="article.content"
 
   h4 Created at
   p ng-bind="article.created_at | date : format : timezone"

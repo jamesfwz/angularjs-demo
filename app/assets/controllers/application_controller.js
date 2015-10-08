@@ -1,12 +1,12 @@
-demoApp = angular.module('demoApp', ['ngRoute','templates'])
+articleApp = angular.module('articleApp', ['ngRoute','templates','articleServices'])
 
-demoApp.config(function ($routeProvider) {
+articleApp.config(function ($routeProvider) {
   $routeProvider.
       when('/articles', {
         templateUrl: 'articles/index.html',
         controller: 'articlesIndexCtrl'
       }).
-      when('/articles/:article_id', {
+      when('/articles/:id', {
         templateUrl: 'articles/show.html',
         controller: 'articlesShowCtrl'
       }).

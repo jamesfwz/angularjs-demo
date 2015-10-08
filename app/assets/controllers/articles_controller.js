@@ -1,12 +1,8 @@
-demoApp.controller('articlesIndexCtrl', function ($scope, $http) {
-  $http.get('articles.json').success(function(data) {
-    $scope.articles = data;
-  });
+articleApp.controller('articlesIndexCtrl', function ($scope, $http, Article) {
+  $scope.articles = Article.query()
   $scope.orderProp = 'created_at';
 });
 
-demoApp.controller('articlesShowCtrl', function ($scope, $routeParams, $http) {
-  $http.get('articles/' + $routeParams.article_id + '.json').success(function(data) {
-    $scope.article = data;
-  });
+articleApp.controller('articlesShowCtrl', function ($scope, $routeParams, $http, Article) {
+  $scope.article = Article.get({id: $routeParams.id})
 });

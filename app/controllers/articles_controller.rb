@@ -12,7 +12,7 @@ class ArticlesController < ApplicationController
   def show
     respond_to do |format|
       format.json { 
-        render :json => Article.find(params[:id])
+        render :json => Article.find(params[:id]).to_json(only: [:id,:title, :content, :created_at], methods: [:picture_url])
       }
     end
   end
