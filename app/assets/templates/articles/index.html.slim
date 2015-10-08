@@ -1,0 +1,30 @@
+#articles-index-container 
+  h1.text-center List of Articles 
+
+  .container-fluid
+    .search
+      | Search: 
+      input ng-model="query"
+    .sort-by
+      | Sort by:
+      select ng-model="orderProp"
+        option value="title" Alphabetical
+        option value="-created_at" Newest
+        option value="created_at" Oldest
+    table.table.table-striped
+      thead
+        tr
+          th ID
+          th Picture
+          th Title
+          th Created at
+      tbody
+        tr ng-repeat="article in articles | filter:query | orderBy:orderProp"
+          td ng-bind="article.id"
+          td.picture 
+            img ng-src="{{article.picture_url}}"
+          td ng-bind="article.title"
+          td ng-bind="article.created_at | date : format : timezone"
+
+    pre ng-bind="articles | filter:query | orderBy:orderProp | json"
+

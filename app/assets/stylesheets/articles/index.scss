@@ -1,0 +1,9 @@
+#articles-index-container {
+  table {
+    td {
+      &.picture img {
+        width: 100px;
+      }
+    }
+  }
+}
