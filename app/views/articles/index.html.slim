@@ -1,0 +1,18 @@
+#articles-index-container
+  h1.text-center List of Articles 
+
+  .container-fluid
+    .search
+      | Search: 
+      input ng-model="query"
+      
+    table.table.table-striped
+      thead
+        tr
+          th Title
+          th Created at
+      tbody
+        tr ng-repeat="article in articles | filter:query"
+          td ng-bind="article.title"
+          td ng-bind="article.content"
+
