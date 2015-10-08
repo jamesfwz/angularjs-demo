@@ -8,4 +8,12 @@ class ArticlesController < ApplicationController
       }
     end
   end
+
+  def show
+    respond_to do |format|
+      format.json { 
+        render :json => Article.find(params[:id])
+      }
+    end
+  end
 end

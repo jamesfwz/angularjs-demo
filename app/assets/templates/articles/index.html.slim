@@ -22,7 +22,8 @@
         tr ng-repeat="article in articles | filter:query | orderBy:orderProp"
           td ng-bind="article.id"
           td.picture 
-            img ng-src="{{article.picture_url}}"
+            a ng-href="#/articles/{{article.id}}"
+              img ng-src="{{article.picture_url}}"
           td ng-bind="article.title"
           td ng-bind="article.created_at | date : format : timezone"
 

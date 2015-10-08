@@ -1,0 +1,11 @@
+#articles-show-container 
+  h1 ng-bind="article.title"
+  
+  h4 Content
+  p ng-bind="article.content"
+
+  h4 Created at
+  p ng-bind="article.created_at | date : format : timezone"
+
+  pre ng-bind="article | json"
+
