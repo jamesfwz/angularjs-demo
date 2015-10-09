@@ -1,5 +1,5 @@
+ruby '2.2.3'
 source 'https://rubygems.org'
-
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
@@ -29,6 +29,7 @@ gem 'bootstrap-sass'
 gem 'angularjs-rails'
 gem 'angular-rails-templates'
 gem "paperclip", "~> 4.3"
+gem 'aws-sdk', '< 2.0'
 gem 'underscore-rails'
 gem 'angular_rails_csrf'
 
