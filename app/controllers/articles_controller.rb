@@ -35,7 +35,8 @@ class ArticlesController < ApplicationController
   def create_params
     params.require(:article).permit(
         :title,
-        :content
+        :content,
+        :picture
       )
   end
 end

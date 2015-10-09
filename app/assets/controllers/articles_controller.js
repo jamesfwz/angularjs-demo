@@ -7,15 +7,18 @@ articleApp.controller('articlesShowCtrl', function ($scope, $routeParams, $http,
   $scope.article = Article.show({id: $routeParams.id})
 });
 
-articleApp.controller("articlesNewCtrl", function($scope, $resource, Articles, $location) {
+articleApp.controller("articlesNewCtrl", function($scope, $resource, Upload, $location) {
   $scope.article = {}
 
   $scope.save = function () {
     if ($scope.articleForm.$valid){
-      Articles.create({article: $scope.article}, function(){
+      Upload.upload({
+        url: 'articles.json',
+        data: {article: $scope.article}
+      }).then(function (resp) {
         $location.path('/');      
-      }, function(error){
-        console.log(error)
+      }, function (resp) {
+        console.log('Error status: ' + resp.status);
       });
     }
   }

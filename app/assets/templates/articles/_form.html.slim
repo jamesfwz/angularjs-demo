@@ -17,6 +17,15 @@
       textarea.form-control name="content" ng-model="article.content" required="" placeholder="Type something here"
     p ng-show=" submitted && articleForm.content.$invalid" class="help-block"
       | Content is required.
+  .form-group ng-class="{'has-error' : submitted && articleForm.picture.$invalid}"
+    .col-md-3
+      label.control-label
+        | Picture
+        span.required *
+    .col-md-4
+      input type="file" ngf-select="" ng-model="article.picture" name="picture" accept="image/*"
+      p ng-show=" submitted && articleForm.picture.$invalid" class="help-block"
+        | Picture is invalid.
 
   .btn-group
     a.btn.btn-default href="#/" Back
