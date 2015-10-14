@@ -32,7 +32,6 @@ gem "paperclip", "~> 4.3"
 gem 'aws-sdk', '< 2.0'
 gem 'underscore-rails'
 gem 'angular_rails_csrf'
-gem 'sprockets', '2.12.3'
 
 group :development do
   gem 'html2slim'
